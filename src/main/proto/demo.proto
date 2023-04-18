@@ -18,3 +18,20 @@ message DemoRequest {
 message DemoReply {
   string message = 1;
 }
+
+// Define the operations of the api
+service ProjectService {
+  rpc GetProjects (ProjectsRequest) returns (Projects) {}
+}
+// Define the objects involved
+message ProjectsRequest {
+}
+
+message Projects {
+  repeated Project project = 1;
+}
+
+message Project {
+  int32 id = 1;
+  string name = 2;
+}
